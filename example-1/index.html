@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>example-1</title>
+  <link rel="stylesheet" href="/node_modules/reset.css/reset.css">
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script src="/node_modules/requirejs/require.js"></script>
+  <script type="text/javascript">
+    requirejs.config({
+      paths: {
+          'react': '/node_modules/react/umd/react.development',
+          'react-dom': '/node_modules/react-dom/umd/react-dom.development'
+      }
+    });
+  </script>
+  <script src="/dist/index.js"></script>
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', () => requirejs(['main']));
+  </script>
+</body>
+</html>

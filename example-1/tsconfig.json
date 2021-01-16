@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "target": "ES2020",
+    "moduleResolution": "Node",
+    "outFile": "dist/index.js",
+    "inlineSourceMap": true,
+    "allowSyntheticDefaultImports": false, // would conflict with amd
+    "allowJs": true,
+    "jsx": "react"
+  },
+  "include": [
+    // we can't include the compiled umd files from react, since they have no defined name
+    "src/index.tsx"
+  ]
+}

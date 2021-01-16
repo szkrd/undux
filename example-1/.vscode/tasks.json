@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "prettify",
+			"problemMatcher": [],
+			"label": "npm: prettify",
+			"detail": "prettier --write src",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
