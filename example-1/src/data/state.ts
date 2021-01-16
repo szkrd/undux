@@ -6,6 +6,9 @@ export class AppState {
     name: 'John Doe',
     email: 'john.doe@mail.com',
   };
+  ui = {
+    editMode: true,
+  };
   motd: string = motdService.getRandomQuote();
   todoItems: ITodoItem[] = todoService.loadFromStorage();
 }
@@ -13,13 +16,12 @@ export class AppState {
 // ---
 
 const state = new AppState();
-const APP_STATE_MUTATION_EVENT_ID = 'APP_STATE_MUTATED';
+const listeners = [];
 type TModifierFn = (state: AppState) => void;
 
 export function writeState(modifierFn: TModifierFn) {
   modifierFn(state);
-  const changeEvent = new Event(APP_STATE_MUTATION_EVENT_ID);
-  document.dispatchEvent(changeEvent);
+  listeners.forEach((listener) => listener(state));
 }
 
 export function readState() {
@@ -44,6 +46,9 @@ export function addAppStateChangeListener<T>(
       oldVal = val;
     }
   };
-  document.addEventListener(APP_STATE_MUTATION_EVENT_ID, listener);
-  return () => document.removeEventListener(APP_STATE_MUTATION_EVENT_ID, listener);
+  listeners.push(listener);
+  return () => {
+    const idx = listeners.indexOf(listener);
+    if (idx > -1) listeners.splice(idx, 1);
+  };
 }

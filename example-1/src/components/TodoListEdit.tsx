@@ -2,7 +2,7 @@ import * as React from 'react';
 import useAppState from '../hooks/useAppState';
 import todoService, { ITodoItem } from '../data/todoService';
 
-export default function TodoList() {
+export default function TodoListEdit() {
   const [newItemText, setNewItemText] = React.useState('');
   const todoItems = useAppState<ITodoItem[]>((state) => state.todoItems);
   const onAddClick = () => {
@@ -12,7 +12,7 @@ export default function TodoList() {
     setNewItemText('');
   };
   return (
-    <main className="todo-list-component">
+    <main className="todo-list-edit-component">
       <h2>Your todo list:</h2>
       <ul>
         {todoItems.map((todoItem) => (

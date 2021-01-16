@@ -55,6 +55,23 @@ button.warning {
   flex-direction: column;
 }
 
+.app-component .toggle {
+  display: inline-block;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+
+.app-component .toggle a {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.app-component .toggle a:hover {
+  text-decoration: none;
+}
+
 /* === HEADER === */
 
 .header-component {
@@ -76,12 +93,12 @@ button.warning {
 
 /* === TODO-LIST === */
 
-.todo-list-component {
+.todo-list-edit-component {
   flex: 1;
   padding: 20px;
 }
 
-.todo-list-component h2 {
+.todo-list-edit-component h2 {
   padding: 0 0 5px 0;
   margin: 0 0 15px 0;
   font-size: 26px;
@@ -89,42 +106,51 @@ button.warning {
   border-bottom: 1px dashed black;
 }
 
-.todo-list-component ul {
+.todo-list-edit-component ul {
   max-width: 600px;
 }
 
-.todo-list-component ul + p {
+.todo-list-edit-component ul + p {
   margin-top: 25px;
 }
 
-.todo-list-component p {
+.todo-list-edit-component p {
   margin-bottom: 10px;
 }
 
-.todo-list-component li {
+.todo-list-edit-component li {
   margin: 10px 0;
   padding: 5px 0 5px 5px;
   box-shadow: 2px 2px 10px inset rgba(0, 0, 0, .15);
   border-radius: 5px;
 }
 
-.todo-list-component li .done {
+.todo-list-edit-component li .done {
   text-decoration: line-through;
   color: silver;
 }
 
-.todo-list-component li span {
+.todo-list-edit-component li span {
   font-size: 20px;
   line-height: 20px;
   display: flex;
 }
 
-.todo-list-component li span span {
+.todo-list-edit-component li span span {
   flex: 1;
 }
 
-.todo-list-component input, .todo-list-component button {
+.todo-list-edit-component input, .todo-list-edit-component button {
   margin: 0 5px;
+}
+
+.todo-list-view-component {
+  flex: 1;
+}
+
+.todo-list-view-component li {
+  font-size: 35px;
+  margin: 10px;
 }
 
 /* === FOOTER === */
