@@ -34,6 +34,7 @@ So.
 3. writing fires event, every component listens for change, unsubscribes on unmount (via single hook):  
    `const todoItems = useAppState<ITodoItem[]>((state) => state.todoItems);`
 4. store section access (r/w) is discoverable from any leaf of the store
+5. against [zombie children](https://react-redux.js.org/api/hooks#stale-props-and-zombie-children) use defensive selectors or avoid using props inside a selector
 
 ## Example-2
 
